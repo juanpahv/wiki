@@ -17,10 +17,10 @@ export default function PasswordRecoveryForm() {
         setShowModalCodeEntry(false);
         setShowModalChangePassword(true);
     }
-    function handleChangePassword () {
+    async function handleChangePassword () {
         try{
             const changePasswordByRecuperationTask = new ChangePasswordByRecuperationTask({mailVerificationCodeId,newPassword});
-            changePasswordByRecuperationTask.execute();
+            await changePasswordByRecuperationTask.execute();
             toast('Success',{type: 'success'});
         }catch(e){
             switch ((e as Error).message) {

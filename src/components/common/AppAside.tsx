@@ -1,6 +1,6 @@
 import { Nav } from "react-bootstrap";
-import './scss/AppAside.scss'
 import logo from "../img/logo.svg"
+import './scss/AppAside.scss'
 
 export default function AppAside() {
 
