@@ -1,8 +1,8 @@
 export default function JavaScriptContent (){
     return (
         <>
-            <h2>JAVASCRIPT</h2>
-            <h2>¿QUÉ ES?</h2>
+            <h2 className="text-center">JAVASCRIPT</h2>
+            <h4>¿QUÉ ES?</h4>
             <p style={{textAlign: "justify"}}>Es un lenguaje de programación o de secuencias de comandos que te permite implementar
                 funciones complejas
                 en
@@ -13,9 +13,8 @@ export default function JavaScriptContent (){
                 JavaScript
                 está involucrado.
             </p>
-            <br/>
-            <h2>¿QUÉ PUEDE HACER?</h2>
-            <ul >
+            <h4>¿QUÉ PUEDE HACER?</h4>
+            <ul>
                 <li>Almacenar valores útiles dentro de variables. En el ejemplo anterior, por ejemplo, pedimos que
                     ingreses
                     un
@@ -33,9 +32,8 @@ export default function JavaScriptContent (){
                     que
                     actualiza la etiqueta de texto.</li>
             </ul>
-            <br/>
-            <h2>CARACTERÍSTICAS</h2>
-            <h3>Lenguaje del lado del cliente:</h3>
+            <h4>CARACTERÍSTICAS</h4>
+            <h5>Lenguaje del lado del cliente:</h5>
             <p>Cuando se dice que un lenguaje es del lado del cliente, nos referimos a que se ejecuta en la máquina del
                 propio cliente a través de un navegador. Algunos de estos lenguajes son el propio javascript, HTML, CSS
                 o
@@ -46,11 +44,11 @@ export default function JavaScriptContent (){
                 mostrarlos al usuario final. Algunos de los lenguajes de programación del lado del servidor más
                 conocidos
                 son PHP, ASP o PERL.</p>
-            <h3>Lenguaje orientado a objetos:</h3>
+            <h5>Lenguaje orientado a objetos:</h5>
             <p style={{textAlign: "justify"}}>Javascript es un lenguaje orientado a objetos. Que un lenguaje esté orientado a objetos quiere decir que
                 utiliza clases y objetos como estructuras que permiten organizarse de forma simple y son reutilizables
                 durante todo el desarrollo. Otros lenguajes orientados a objetos son Java, Python o C++.</p>
-            <h3>De tipado débil o no tipado:</h3>
+            <h5>De tipado débil o no tipado:</h5>
             <p style={{textAlign: "justify"}}>Que un lenguaje sea de tipado débil quiere decir que no es necesario especificar el tipo de dato al
                 declarar
                 una variable. Esta característica supone una gran ventaja a la hora de ganar rapidez programando, pero
@@ -58,7 +56,7 @@ export default function JavaScriptContent (){
                 provocar que cometamos más errores que si tuviéramos esa restricción que poseen los lenguajes de tipado
                 fuerte como C++ o Java.
                 </p>
-            <h3>De alto nivel:</h3>
+            <h5>De alto nivel:</h5>
             <p style={{textAlign: "justify"}}>Que Javascript sea un lenguaje de alto nivel significa que su sintaxis es fácilmente comprensible por su
                 similitud al lenguaje de las personas. Se le llama de “alto nivel” porque su sintaxis se encuentra
                 alejada
@@ -70,7 +68,7 @@ export default function JavaScriptContent (){
                 nivel muy utilizado y uno de los mejores para iniciarse en programación por esta característica es
                 Python.
             </p>
-            <h3>Lenguaje interpretado:</h3>
+            <h5>Lenguaje interpretado:</h5>
             <p style={{textAlign: "justify"}}>Javascript es un lenguaje interpretado porque utiliza un intérprete que permite convertir las líneas de
                 código en el lenguaje de la máquina. Esto tiene un gran número de ventajas como la reducción del
                 procesamiento en servidores web al ejecutarse directamente en el navegador del usuario, o que es apto
@@ -78,7 +76,7 @@ export default function JavaScriptContent (){
                 múltiples plataformas permitiendo usar el mismo código.
                 Además de JS, otros ejemplos de lenguajes interpretados son C#, Ruby, Java o Python.
             </p>
-            <h3>Muy utilizado por desarrolladores:</h3>
+            <h5>Muy utilizado por desarrolladores:</h5>
             <p style={{textAlign: "justify"}}>A la hora de elegir si aprender o no un nuevo lenguaje, no sólo hay que informarse sobre el tipo de
                 lenguaje
                 o su curva de aprendizaje, si no también su demanda en el mercado. Javascript es en la actualidad uno de

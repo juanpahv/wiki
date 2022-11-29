@@ -1,8 +1,8 @@
 export default function HTTPContent (){
     return (
         <>
-            <h2>HTTP</h2>
-            <h2>¿QUÉ ES?</h2>
+            <h2 className="text-center">HTTP</h2>
+            <h4>¿QUÉ ES?</h4>
             <p style={{textAlign: "justify"}}>HTTP, de sus siglas en inglés: "Hypertext Transfer Protocol", es el nombre de un protocolo el cual nos
                 permite realizar una petición de datos y recursos, como pueden ser documentos HTML. Es la base de
                 cualquier
@@ -13,9 +13,8 @@ export default function HTTPContent (){
                 ejemplo: un documento que especifique el estilo de maquetación de la página web (CSS), el texto, las
                 imágenes, vídeos, scripts, etc...
             </p>
-            <br/>
-            <h2>CARACTERÍSTICAS</h2>
-            <h3>HTTP es sencillo</h3>
+            <h4>CARACTERÍSTICAS</h4>
+            <h5>HTTP es sencillo</h5>
             <p style={{textAlign: "justify"}}>Incluso con el incremento de complejidad, que se produjo en el desarrollo de la versión del protocolo
                 HTTP/2,
                 en la que se encapsularon los mensajes, HTTP esta pensado y desarrollado para ser leído y fácilmente
@@ -23,14 +22,14 @@ export default function HTTPContent (){
                 la
                 curva de aprendizaje para las personan que empieza a trabajar con él.
             </p>
-            <h3>HTTP es extensible</h3>
+            <h5>HTTP es extensible</h5>
             <p style={{textAlign: "justify"}}>Presentadas en la versión HTTP/1.0, las cabeceras de HTTP, han hecho que este protocolo sea fácil de
                 ampliar
                 y de experimentar con él. Funcionalidades nuevas pueden desarrollarse, sin más que un cliente y su
                 servidor,
                 comprendan la misma semántica sobre las cabeceras de HTTP.
             </p>
-            <h3>HTTP es un protocolo con sesiones, pero sin estados</h3>
+            <h5>HTTP es un protocolo con sesiones, pero sin estados</h5>
             <p style={{textAlign: "justify"}}>HTTP es un protocolo sin estado, es decir: no guarda ningún dato entre dos peticiones en la mísma sesión.
                 Esto crea problemáticas, en caso de que los usuarios requieran interactuar con determinadas páginas Web
                 de
@@ -40,7 +39,7 @@ export default function HTTPContent (){
                 permite guardar datos con respecto a la sesión de comunicación. Usando la capacidad de ampliación del
                 protocolo HTTP, las cookies permiten crear un contexto común para cada sesión de comunicación.
             </p>
-            <h3>HTTP y conexiones</h3>
+            <h5>HTTP y conexiones</h5>
             <p style={{textAlign: "justify"}}>Una conexión se gestiona al nivel de la capa de trasporte, y por tanto queda fuera del alcance del
                 protocolo
                 HTTP. Aún con este factor, HTTP no necesita que el protocolo que lo sustenta mantenga una conexión
@@ -55,9 +54,6 @@ export default function HTTPContent (){
                 conexión
                 continua no es necesaria siempre.
             </p>
-            {/* <div class="col-xs-12 col-md-4 contenedor-imagen">
-                <img src="img/http.jpg" alt="http">
-            </div> */}
         </>
     );
 }

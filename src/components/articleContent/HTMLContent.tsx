@@ -1,19 +1,15 @@
 export default function HTMLContent (){
     return (
         <>
-            <h2>HTML</h2>
-            <h2>¿QUÉ ES?</h2>
+            <h2 className="text-center">HTML</h2>
+            <h4>¿QUÉ ES?</h4>
             <p style={{textAlign: "justify"}}>El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar
                 y desplegar una
                 página web y sus contenidos.
                 Por ejemplo, sus contenidos podrían ser párrafos, una lista con viñetas, o imágenes y tablas de datos.
                 Como lo sugiere el título, este artículo te dará una comprensión básica de HTML y cúal es su función.
             </p>
-            {/* <div class="col-xs-12 col-md-4 contenedor-imagen">
-                <img src="img/html5.png" alt="html">
-            </div> */}
-            <br/>
-            <h2>CARACTERÍSTICAS</h2>
+            <h4>CARACTERÍSTICAS</h4>
             <ul>
                 <li>Meta datos: Esta puede ser información que le dé contexto a la página.
                     Por ejemplo, nos sirve para indicar el idioma.</li>
@@ -22,8 +18,7 @@ export default function HTMLContent (){
                 <li>Scripts y estilos: En caso de que estos no sean incluidos en un fichero independiente se pueden incluir
                     en la cabecera.</li>
             </ul>
-            <br/>
-            <h2>ANAMOTOMÍA DE UN ELEMENTO</h2>
+            <h4>ANAMOTOMÍA DE UN ELEMENTO</h4>
             <ul style={{textAlign: "justify"}}>
                 <li>La etiqueta de apertura: consiste en el nombre del elemento (en este caso, p), encerrado por paréntesis
                     angulares de apertura y cierre.

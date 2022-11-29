@@ -1,14 +1,17 @@
+import css1 from "../img/css1.jpeg"
+
 export default function CSSContent (){
     return (
         <>
-            <h2>CSS</h2>
-            <h2>¿QUÉ ES?</h2>
-            <p style={{textAlign: "justify"}}>
+            <h2 className="text-center">CSS</h2>
+            <h4>¿QUÉ ES?</h4>
+            <p style={{textAlign: "start"}}>
                 CSS son las siglas en inglés de Cascading Style Sheets, que significa «hojas de esilo en cascada». Es un
                 lenguaje que se usa para estilizar elementos escritos en un lenguaje de marcado como HTML.
+                <img src={css1} alt="css" className=""/>
             </p>
             <br/>
-            <h3>¿PARA QUÉ SIRVE?</h3>
+            <h4>¿PARA QUÉ SIRVE?</h4>
             <p style={{textAlign: "justify"}}>
                 Como hemos mencionado, el CSS es un lenguaje informático que especifica cómo se presentan los documentos
                 a los usuarios: cómo se diseñan, compaginan, etc.
@@ -23,7 +26,7 @@ export default function CSSContent (){
                 información relacionada. Incluso se puede usar para crear efectos de animación.
             </p>
             <br/>
-            <h2>VENTAJAS</h2>
+            <h4>VENTAJAS</h4>
             <p style={{textAlign: "justify"}}>
                 La diferencia entre un sitio web que implementa CSS y uno que no, es enorme y definitivamente se nota.
 
@@ -48,7 +51,7 @@ export default function CSSContent (){
                 básico.
             </p>
             <br/>
-            <h2>ESTILO INTERNO Y EXTERNO</h2>
+            <h4>ESTILO INTERNO Y EXTERNO</h4>
             <p style={{textAlign: "justify"}}>
                 Los estilos CSS hechos de esta manera se cargan cada vez que se
                 actualiza un sitio web, lo que puede aumentar el tiempo de carga. Además, no podrás usar el mismo estilo
@@ -68,7 +71,7 @@ export default function CSSContent (){
                 tener una vista previa rápida de los cambios o tal vez no tengas acceso a los archivos CSS.
             </p>
             <br/>
-            <h2>CARACTERÍSTICAS</h2>
+            <h4>CARACTERÍSTICAS</h4>
             <ul>
                 <li>Es un lenguaje de programación diferente a HTML.</li>
                 <li>Es un lenguaje de programación diferente a HTML.</li>
@@ -78,9 +81,6 @@ export default function CSSContent (){
                 <li>Tiene una sintaxis específica.</li>
                 <li>Permite personalizar totalmente la apariencia de las páginas.</li>
             </ul>
-            {/* <div class="col-xs-12 col-md-4 contenedor-imagen">
-                <img src="img/css.jpg" alt="http">
-            </div> */}
         </>
     );
 }

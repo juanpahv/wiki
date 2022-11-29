@@ -1,22 +1,78 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import SendPasswordRecuperationMailTask from '../../tasks/SendPasswordRecuperationMailTask';
-
+import { toast } from 'react-toastify';
+import ChangePasswordByRecuperationTask from '../../tasks/ChangePasswordByRecuperationTask';
+import { useNavigate } from "react-router-dom";
 
 export default function PasswordRecoveryForm() {
     const [mail, setMail] = useState('');
+    const [mailVerificationCodeId, setmailVerificationCodeId] = useState(0);
+    const [newPassword, setNewPassword] = useState('');
     const [showModalCodeEntry, setShowModalCodeEntry] = useState(false);
     const [showModalChangePassword, setShowModalChangePassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleAcceptCodeEntry = () =>{
-        //TODO logic to verify code
         setShowModalCodeEntry(false);
         setShowModalChangePassword(true);
     }
+    function handleChangePassword () {
+        try{
+            const changePasswordByRecuperationTask = new ChangePasswordByRecuperationTask({mailVerificationCodeId,newPassword});
+            changePasswordByRecuperationTask.execute();
+        }catch(e){
+            switch ((e as Error).message) {
+                case 'ErrorFormularioIncompleto':
+                    toast(
+                        'One or more fields are missing',
+                        { type: 'warning' }
+                    );
+                    break;
+                case 'CodigoExpirado':
+                    toast(
+                        "Expierd code",
+                        { type: 'warning' }
+                    );
+                    break;
+                default:
+                    toast(
+                        "there's been an unkown error",
+                        { type: 'error' }
+                    );
+            }
+        }
+        setShowModalChangePassword(false);
+        setShowModalCodeEntry(false);
+        
+        //navigate('/LogIn')
+    }
 
     const handleSendEmail = () => {
-        const sendPasswordRecuperationMailTask = new SendPasswordRecuperationMailTask({mail});
-        sendPasswordRecuperationMailTask.execute();
+        try{
+            const sendPasswordRecuperationMailTask = new SendPasswordRecuperationMailTask({mail});
+            sendPasswordRecuperationMailTask.execute();
+        }catch(e){
+            switch ((e as Error).message) {
+                case 'ErrorFaltaMail':
+                    toast(
+                        'Mail is missing',
+                        { type: 'warning' }
+                    );
+                    break;
+                case 'ErrorCorreoNoRegistrado':
+                    toast(
+                        "non-existent acount",
+                        { type: 'warning' }
+                    );
+                    break;
+                default:
+                    toast(
+                        "there's been an unkown error",
+                        { type: 'error' }
+                    );
+            }
+        }
         setShowModalCodeEntry(true);
 
     }
@@ -60,10 +116,11 @@ export default function PasswordRecoveryForm() {
                 <Form.Group>
                     <Form.Label htmlFor="txtCode">Code</Form.Label>
                     <Form.Control 
-                        type="text"
+                        type="number"
                         id="txtCode"
                         name="code"
                         autoFocus
+                        onChange={(event: ChangeEvent<HTMLInputElement>)=>setmailVerificationCodeId(parseInt(event.target.value))}
                     />
                 </Form.Group>
                 </Form>
@@ -97,6 +154,7 @@ export default function PasswordRecoveryForm() {
                         id="txtNewPassword"
                         name="newPassword"
                         autoFocus
+                        onChange={(event: ChangeEvent<HTMLInputElement>)=>setNewPassword(event.target.value)}
                     />
                 </Form.Group>
                 </Form>
@@ -105,7 +163,7 @@ export default function PasswordRecoveryForm() {
                 <Button variant="secondary" onClick={()=>setShowModalChangePassword(false)}>
                     Cancel
                 </Button>
-                <Button variant="primary" /*onClick={}*/>
+                <Button variant="primary" onClick={handleChangePassword}>
                     Accept
                 </Button>
             </Modal.Footer>

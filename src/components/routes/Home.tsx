@@ -18,7 +18,7 @@ export default function Home (){
                         </Row>
                         <Container>
                             <Row className="justify-content-center mt-5">
-                                <Col md={ {span: 10, offset: 2} } className="main">
+                                <Col md={ {span: 10, offset: 2} } className="main p-5">
                                     <Outlet />
                                 </Col>
                             </Row>
