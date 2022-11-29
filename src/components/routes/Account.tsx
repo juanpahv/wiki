@@ -21,9 +21,9 @@ export default function Account() {
                             <Row>
                                 <Col sm={4}>
                                     <ListGroup>
-                                        <ListGroup.Item action variant="secondary" href="#link1">
+                                        {/* <ListGroup.Item action variant="secondary" href="#link1">
                                         Mail verification
-                                        </ListGroup.Item>
+                                        </ListGroup.Item> */}
                                         <ListGroup.Item action variant="secondary" href="#link2">
                                         Change password
                                         </ListGroup.Item>
@@ -31,13 +31,13 @@ export default function Account() {
                                 </Col>
                                 <Col sm={8}>
                                     <Tab.Content>
-                                        <Tab.Pane eventKey="#link1">
+                                        {/* <Tab.Pane eventKey="#link1">
                                             <ListGroup variant="flush">
                                                 <ListGroup.Item className="mb-3"><h4>Verify your email</h4></ListGroup.Item>
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quod qui suscipit. Adipisci aliquam labore minus, voluptates placeat eveniet at et quibusdam qui? Animi molestias quibusdam exercitationem illum provident saepe?
                                                 <VerifyEmailForm />
                                             </ListGroup>
-                                        </Tab.Pane>
+                                        </Tab.Pane> */}
                                         <Tab.Pane eventKey="#link2">
                                             <ListGroup variant="flush">
                                                 <ListGroup.Item className="mb-3"><h4>Change your password</h4></ListGroup.Item>

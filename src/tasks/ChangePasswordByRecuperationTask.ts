@@ -14,7 +14,7 @@ export default class ChangePasswordByRecuperationTask {
 
     public async execute(): Promise<void>{
         this.validarData();
-        this.changePassword();
+        await this.changePassword();
     }
 
     private async changePassword():Promise<void>{

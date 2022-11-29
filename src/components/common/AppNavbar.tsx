@@ -3,9 +3,48 @@ import { Link, useNavigate } from "react-router-dom";
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './scss/AppNavbar.scss'
+import { useEffect, useState } from "react";
 
 export default function AppNavbar() {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [loadedElement, setLodedElement] = useState(<></>)
     const navigate = useNavigate();
+
+    async function getTokenSession() {
+        const tokenSesionValue = localStorage.getItem('tokenSesion');
+        
+        if(tokenSesionValue){
+            setLodedElement(
+                <Link to={"/Account"} className="mt-2">
+                    <FontAwesomeIcon icon ={faUser} size="xl" className="pb-2" color="black" />
+                </Link>
+            );
+
+
+        }else{
+            setLodedElement(
+                <>
+                    <Button className="me-3" onClick={handleClickLogIn}>
+                        Log In
+                    </Button>
+                    <Button onClick={handleClickSignUp}>
+                        Sign Up
+                    </Button>
+                </>
+            );
+        }
+        setIsLoaded(true)
+    }
+
+    useEffect(() => {
+        if (!isLoaded) {
+            getTokenSession();
+        }
+    });
+
+    if (!isLoaded) {
+        return <></>;
+    }
 
     function handleClickLogIn(){
         navigate('/LogIn');
@@ -23,15 +62,7 @@ export default function AppNavbar() {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Button className="me-3" onClick={handleClickLogIn}>
-                            Log In
-                        </Button>
-                        <Button onClick={handleClickSignUp}>
-                            Sign Up
-                        </Button>
-                        <Link to={"/Account"} className="mt-2">
-                            <FontAwesomeIcon icon ={faUser} size="xl" className="pb-2" color="black" />
-                        </Link>
+                        {loadedElement}                 
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

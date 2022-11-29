@@ -21,6 +21,7 @@ export default function PasswordRecoveryForm() {
         try{
             const changePasswordByRecuperationTask = new ChangePasswordByRecuperationTask({mailVerificationCodeId,newPassword});
             changePasswordByRecuperationTask.execute();
+            toast('Success',{type: 'success'});
         }catch(e){
             switch ((e as Error).message) {
                 case 'ErrorFormularioIncompleto':
@@ -45,7 +46,7 @@ export default function PasswordRecoveryForm() {
         setShowModalChangePassword(false);
         setShowModalCodeEntry(false);
         
-        //navigate('/LogIn')
+        navigate('/LogIn')
     }
 
     const handleSendEmail = () => {

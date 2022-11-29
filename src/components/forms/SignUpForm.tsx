@@ -41,7 +41,7 @@ export default function SignUpForm () {
                     break;
                 case 'ErrorNombreUsuarioDuplicado':
                     toast(
-                        'Username already in use',
+                        'Username or email already in use',
                         { type: 'error' }
                     );
                     break;
