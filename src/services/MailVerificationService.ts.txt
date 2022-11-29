@@ -1,0 +1,21 @@
+import axios, {AxiosError} from "axios";
+
+export default class MailVerificationService {
+    private baseUrl: string;
+
+    public constructor() {
+        this.baseUrl = 'http://localhost:3001/auth';
+    }
+
+    public async sendRecuperationMail(
+        mail : string
+    ): Promise <string> {
+        try{
+            const respuesta = await axios.post(
+                `${this.baseUrl}/signUp`,
+                signUpData
+            );
+            return respuesta.data.tokenSesion as string;
+        }
+    }
+}

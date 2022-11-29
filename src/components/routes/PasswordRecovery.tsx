@@ -18,7 +18,7 @@ export default function PasswordRecovery(){
                             <Col md={ {span: 10, offset: 1} } >
                                 <ListGroup variant="flush">
                                     <ListGroup.Item className="mb-3"><h4>Recover your password</h4></ListGroup.Item>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse repellat assumenda aliquid officiis, aperiam ad inventore cupiditate ipsum tempora recusandae nam autem, dolorem qui. Voluptate nam perferendis modi mollitia vel!
+                                    
                                     <PasswordRecoveryForm />
                                 </ListGroup>
                             </Col>

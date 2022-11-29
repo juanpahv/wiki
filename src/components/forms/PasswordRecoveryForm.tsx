@@ -1,17 +1,51 @@
+import { ChangeEvent, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import SendPasswordRecuperationMailTask from '../../tasks/SendPasswordRecuperationMailTask';
+
 
 export default function PasswordRecoveryForm() {
+    const [mail, setMail] = useState('');
+    const [showModalCodeEntry, setShowModalCodeEntry] = useState(false);
+    const [showModalChangePassword, setShowModalChangePassword] = useState(false);
+
+    const handleAcceptCodeEntry = () =>{
+        //TODO logic to verify code
+        setShowModalCodeEntry(false);
+        setShowModalChangePassword(true);
+    }
+
+    const handleSendEmail = () => {
+        const sendPasswordRecuperationMailTask = new SendPasswordRecuperationMailTask({mail});
+        sendPasswordRecuperationMailTask.execute();
+        setShowModalCodeEntry(true);
+
+    }
+
+    function handleMailChange(
+        event: ChangeEvent<HTMLInputElement>
+    ) {
+        const valorMail = event.target.value;
+        setMail(valorMail);
+    }
+
     return(
         <>
         <Form>
-            <Button className="mt-3" /*onClick={}*/>
+            <Form.Label htmlFor="txtCode">Enter your email</Form.Label>
+            <Form.Control 
+                type="text"
+                id="txtCode"
+                name="code"
+                autoFocus
+                onChange={handleMailChange}
+            />
+            <Button className="mt-3" onClick={handleSendEmail}>
                 Send code
             </Button>
         </Form>
 
         <Modal
-        // show={true}
-        // onHide={}
+        show={showModalCodeEntry}
         animation={true}
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -35,18 +69,17 @@ export default function PasswordRecoveryForm() {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" /*onClick={}*/>
+                <Button variant="secondary" onClick={() => setShowModalCodeEntry(false)}>
                     Cancel
                 </Button>
-                <Button variant="primary" /*onClick={}*/>
+                <Button variant="primary" onClick={handleAcceptCodeEntry}>
                     Accept
                 </Button>
             </Modal.Footer>
         </Modal>
 
         <Modal
-        // show={true}
-        // onHide={}
+        show={showModalChangePassword}
         animation={true}
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -69,7 +102,7 @@ export default function PasswordRecoveryForm() {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" /*onClick={}*/>
+                <Button variant="secondary" onClick={()=>setShowModalChangePassword(false)}>
                     Cancel
                 </Button>
                 <Button variant="primary" /*onClick={}*/>

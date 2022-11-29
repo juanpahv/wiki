@@ -32,7 +32,7 @@ export default class SignUpNewUserTask {
             verifyPassword
         } = this.logInNewUserData;
 
-        const tokenSesion = authenticationService.signUpNewUser({
+        const tokenSesion = await authenticationService.signUpNewUser({
             nombreUsuario,
             password,
             mail
