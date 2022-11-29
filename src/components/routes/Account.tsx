@@ -1,12 +1,27 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card, Col, Container, ListGroup, Row, Tab } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Button, Card, Col, Container, ListGroup, Row, Tab } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import ChangePasswordForm from "../forms/ChangePasswordForm";
-import VerifyEmailForm from "../forms/VerifyEmailForm";
 import "./scss/Account.scss"
 
 export default function Account() {
+    const navigate = useNavigate();
+
+    function logOut() {
+        localStorage.removeItem('tokenSesion');
+        navigate('/LogIn');
+    }
+
+    useEffect(() => {
+        const tokenSesion = localStorage.getItem('tokenSesion');
+
+        if(!tokenSesion) {
+            navigate('/LogIn');
+        }
+    })
+
     return(
         <>
             <Container className="config p-5">
@@ -16,7 +31,7 @@ export default function Account() {
                     </Link>
                     <Card>
                     <Card.Header as="h2">My account</Card.Header>
-                    <Card.Body>
+                        <Card.Body>
                             <Tab.Container id="tabs" defaultActiveKey="#link1">
                             <Row>
                                 <Col sm={4}>
@@ -49,8 +64,11 @@ export default function Account() {
                                 </Col>
                             </Row>
                             </Tab.Container>
-                    </Card.Body>
+                        </Card.Body>
                     </Card>
+                    <div className="d-flex justify-content-end">
+                        <Button variant="danger" className="mt-2" onClick={logOut}>Log out</Button>
+                    </div>
                 </Col>
             </Container>
         </>

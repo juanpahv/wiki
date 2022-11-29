@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import React from 'react';
-// import './App.css';
 import Home from './components/routes/Home';
 import LogIn from './components/routes/LogIn';
 import SignUp from './components/routes/SignUp';

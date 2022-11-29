@@ -1,11 +1,22 @@
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogInForm from "../forms/LogInForm";
+import { useEffect } from "react";
 import "./scss/LogIn.scss"
 
 export default function LogIn (){
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const tokenSesion = localStorage.getItem('tokenSesion');
+
+        if(tokenSesion) {
+            navigate('/Landing');
+        }
+    });
+
     return (
         <div className="bg">
             <Container className="content">

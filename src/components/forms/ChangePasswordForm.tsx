@@ -104,13 +104,13 @@ export default function ChangePasswordForm() {
                     <Form.Group>
                         <Form.Label>Mail</Form.Label>
                         <Form.Control
-                            type="password"
-                            id="txtOldPassword"
-                            name="oldPassword"
+                            type="email"
+                            id="txtMail"
+                            name="mail"
                             onChange={handleMailChange}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="pt-2">
                         <Form.Label>Old password</Form.Label>
                         <Form.Control
                             type="password"

@@ -1,11 +1,22 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignUpForm from '../forms/SignUpForm';
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./scss/SignUp.scss"
+import { useEffect } from "react";
 
 export default function SignUp (){
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const tokenSesion = localStorage.getItem('tokenSesion');
+
+        if(tokenSesion) {
+            navigate('/Landing');
+        }
+    });
+    
     return (
         <div className="bg">
             <Container className="content-su">
