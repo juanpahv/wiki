@@ -1,7 +1,7 @@
 export default function JavaScriptContent (){
     return (
         <>
-            <h1>JAVASCRIPT</h1>
+            <h2>JAVASCRIPT</h2>
             <h2>¿QUÉ ES?</h2>
             <p style={{textAlign: "justify"}}>Es un lenguaje de programación o de secuencias de comandos que te permite implementar
                 funciones complejas
@@ -96,7 +96,7 @@ export default function JavaScriptContent (){
 export function JavaScriptPreview (){
     return(
         <>
-        <h1>JAVASCRIPT</h1>
+        <h2>JAVASCRIPT</h2>
             <p style={{textAlign: "justify"}}>Es un lenguaje de programación o de secuencias de comandos que te permite implementar
                 funciones complejas
                 en

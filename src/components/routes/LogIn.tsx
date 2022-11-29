@@ -1,4 +1,4 @@
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function LogIn (){
                             <p>Click here to register</p>
                         </Link>
                         <Link to={"/Landing"} className="pt-4">
-                            <FontAwesomeIcon icon ={faArrowLeft} size="xl" className="pb-2" color="black" />
+                            <FontAwesomeIcon icon ={faHouse} size="xl" className="pb-2" color="black" />
                         </Link>
                     </Col>
                 </Row>

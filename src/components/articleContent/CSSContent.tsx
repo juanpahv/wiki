@@ -1,14 +1,14 @@
 export default function CSSContent (){
     return (
         <>
-            <h1>CSS</h1>
+            <h2>CSS</h2>
             <h2>¿QUÉ ES?</h2>
             <p style={{textAlign: "justify"}}>
                 CSS son las siglas en inglés de Cascading Style Sheets, que significa «hojas de esilo en cascada». Es un
                 lenguaje que se usa para estilizar elementos escritos en un lenguaje de marcado como HTML.
             </p>
             <br/>
-            <h2>¿PARA QUÉ SIRVE?</h2>
+            <h3>¿PARA QUÉ SIRVE?</h3>
             <p style={{textAlign: "justify"}}>
                 Como hemos mencionado, el CSS es un lenguaje informático que especifica cómo se presentan los documentos
                 a los usuarios: cómo se diseñan, compaginan, etc.
@@ -88,7 +88,7 @@ export default function CSSContent (){
 export function CSSPreview (){
     return(
         <>
-        <h1>CSS</h1>
+        <h2>CSS</h2>
             <p style={{textAlign: "justify"}}>
                 CSS son las siglas en inglés de Cascading Style Sheets, que significa «hojas de esilo en cascada». Es un
                 lenguaje que se usa para estilizar elementos escritos en un lenguaje de marcado como HTML.

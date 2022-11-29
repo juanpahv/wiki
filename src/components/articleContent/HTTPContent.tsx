@@ -1,7 +1,7 @@
 export default function HTTPContent (){
     return (
         <>
-            <h1>HTTP</h1>
+            <h2>HTTP</h2>
             <h2>¿QUÉ ES?</h2>
             <p style={{textAlign: "justify"}}>HTTP, de sus siglas en inglés: "Hypertext Transfer Protocol", es el nombre de un protocolo el cual nos
                 permite realizar una petición de datos y recursos, como pueden ser documentos HTML. Es la base de
@@ -65,7 +65,7 @@ export default function HTTPContent (){
 export function HTTPPreview (){
     return(
         <>
-            <h1>HTTP</h1>
+            <h2>HTTP</h2>
                 <p style={{textAlign: "justify"}}>HTTP, de sus siglas en inglés: "Hypertext Transfer Protocol", es el nombre de un protocolo el cual nos
                     permite realizar una petición de datos y recursos, como pueden ser documentos HTML. Es la base de
                     cualquier

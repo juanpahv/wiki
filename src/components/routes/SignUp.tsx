@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SignUpForm from '../forms/SignUpForm';
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./scss/SignUp.scss"
 
@@ -18,7 +18,7 @@ export default function SignUp (){
                             <p>Click here to log in</p>
                         </Link>
                         <Link to={"/Landing"}>
-                            <FontAwesomeIcon icon ={faArrowLeft} size="xl" className="pb-2" color="black" />
+                            <FontAwesomeIcon icon ={faHouse} size="xl" className="pb-2" color="black" />
                         </Link>
                     </Col>
                 </Row>

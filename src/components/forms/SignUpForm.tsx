@@ -121,7 +121,7 @@ export default function SignUpForm () {
                 />
             </Form.Group>
             <Button type="submit" variant="primary" className="text-center mt-3 col-12">
-                Log In
+                Sign Up
             </Button>
         </Form>
     );

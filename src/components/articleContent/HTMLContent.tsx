@@ -1,7 +1,7 @@
 export default function HTMLContent (){
     return (
         <>
-            <h1 >HTML</h1>
+            <h2>HTML</h2>
             <h2>¿QUÉ ES?</h2>
             <p style={{textAlign: "justify"}}>El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar
                 y desplegar una
@@ -42,7 +42,7 @@ export default function HTMLContent (){
 export function HTMLPreview (){
     return(
         <>
-            <h1 >HTML</h1>
+            <h2>HTML</h2>
                 <p style={{textAlign: "justify"}}>El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar
                     y desplegar una
                     página web y sus contenidos.
